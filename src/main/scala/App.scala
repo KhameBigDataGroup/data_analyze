@@ -51,13 +51,13 @@ object App extends App {
   ////    query1.awaitTermination()
   //    query2.awaitTermination()
 
-  val query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "topic")
-    .as[(String, String, String)]
-    .writeStream
-    .outputMode("append")
-    .format("console")
-    .start()
-  query.awaitTermination()
+//  val query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "topic")
+//    .as[(String, String, String)]
+//    .writeStream
+//    .outputMode("append")
+//    .format("console")
+//    .start()
+//  query.awaitTermination()
   //
   df.write.parquet("hdfs://localhost:8020/test/kafka")
   //    df.write.save("hdfs://localhost:50070/test")
