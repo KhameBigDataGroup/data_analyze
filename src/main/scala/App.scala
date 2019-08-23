@@ -28,7 +28,7 @@ object App extends App {
       val df = spark
         .readStream
         .format("kafka")
-        .option("kafka.bootstrap.servers", "127.0.0.1:9092")
+        .option("kafka.bootstrap.servers", "172.17.0.1:9092")
         .option("subscribe", "first_topic")
         .option("startingOffsets", "earliest")
         .load()
