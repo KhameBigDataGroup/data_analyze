@@ -65,5 +65,5 @@ object App extends App {
 //  val numbersRdd = sc.parallelize((1 to 10000).toList)
 //  numbersRdd.saveAsTextFile("hdfs://localhost:8020/test/numbers-as-text-2")
 
-  sc.stop()
+//  sc.stop()
 }
