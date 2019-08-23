@@ -4,7 +4,8 @@ import org.apache.spark.sql.SparkSession
 object App extends App {
   val sparkConf = new SparkConf()
     .setAppName("App")
-    .setMaster("localhost:7077")
+//    .setMaster("localhost:7077")
+    .setMaster("local[*]")
     .set("spark.driver.allowMultipleContexts", "true")
     .set("spark.sql.streaming.checkpointLocation", "./checkpoints")
 
@@ -17,7 +18,7 @@ object App extends App {
 
   val spark = SparkSession
     .builder()
-//    .master("local")
+    .master("local")
     .config(sparkConf)
     .appName("App")
     .getOrCreate()
