@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 object App extends App {
   val sparkConf = new SparkConf()
     .setAppName("App")
-    .setMaster("spark://spark-master:7077")
+    .setMaster("spark://localhost:7077")
     .set("spark.driver.allowMultipleContexts", "true")
     .set("spark.sql.streaming.checkpointLocation", "./checkpoints")
 
