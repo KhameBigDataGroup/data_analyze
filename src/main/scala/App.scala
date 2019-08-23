@@ -25,15 +25,15 @@ object App extends App {
 
   val sc = spark.sparkContext
 
-  //    val df = spark
-  //      .readStream
-  //      .format("kafka")
-  //      .option("kafka.bootstrap.servers", "127.0.0.1:9092")
-  //      .option("subscribe", "first_topic")
-  //      .option("startingOffsets", "earliest")
-  //      .load()
+      val df = spark
+        .readStream
+        .format("kafka")
+        .option("kafka.bootstrap.servers", "127.0.0.1:9092")
+        .option("subscribe", "first_topic")
+        .option("startingOffsets", "earliest")
+        .load()
   //
-  //    import spark.implicits._
+      import spark.implicits._
   //
   //    val cast = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
   //      .as[(String, String)]
@@ -51,19 +51,19 @@ object App extends App {
   ////    query1.awaitTermination()
   //    query2.awaitTermination()
 
-  //    val query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "topic")
-  //      .as[(String, String, String)]
-  //      .writeStream
-  //      .outputMode("append")
-  //      .format("console")
-  //      .start()
-  //    query.awaitTermination()
+      val query = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)", "topic")
+        .as[(String, String, String)]
+        .writeStream
+        .outputMode("append")
+        .format("console")
+        .start()
+      query.awaitTermination()
   //
-  //    df.write.parquet("hdfs://localhost:50070/test/hello.txt")
+      df.write.parquet("hdfs://localhost:8020/test/kafka")
   //    df.write.save("hdfs://localhost:50070/test")
 
-  val numbersRdd = sc.parallelize((1 to 10000).toList)
-  numbersRdd.saveAsTextFile("hdfs://localhost:8020/test/numbers-as-text-2")
+//  val numbersRdd = sc.parallelize((1 to 10000).toList)
+//  numbersRdd.saveAsTextFile("hdfs://localhost:8020/test/numbers-as-text-2")
 
   sc.stop()
 }
