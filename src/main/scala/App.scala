@@ -29,7 +29,7 @@ object App extends App {
         .readStream
         .format("kafka")
         .option("kafka.bootstrap.servers", "172.17.0.1:9092")
-        .option("subscribe", "first_topic")
+        .option("subscribe", "bitcoin")
         .option("startingOffsets", "earliest")
         .load()
   //
