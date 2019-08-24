@@ -35,7 +35,7 @@ object App extends App {
   val path = new Path("/tmp/numbers-as-text/part-00000")
   val stream: FSDataInputStream = hdfs.open(path)
   def readLines: Seq[String] = Stream.cons(stream.readLine, Stream.continually( stream.readLine))
-  print(readLines.length)
+//  print(readLines.length)
   //This example checks line for null and prints every existing line consequentally
   readLines.takeWhile(_ != null).foreach(line => println(line))
 
