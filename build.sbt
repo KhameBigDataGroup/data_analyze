@@ -71,12 +71,12 @@ libraryDependencies += ("org.apache.kafka" % "kafka-streams" % "0.10.2.2").exclu
   ExclusionRule(organization = "javax.jms")
 )
 
-libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.3.3"
+//libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.3.3"
+//
+//libraryDependencies += ("org.apache.cassandra" % "cassandra-all" % "3.4").excludeAll(
+//  ExclusionRule(organization = "org.slf4j")
+//)
 
-libraryDependencies += ("org.apache.cassandra" % "cassandra-all" % "3.4").excludeAll(
-  ExclusionRule(organization = "org.slf4j")
-)
-
-libraryDependencies += "org.apache.spark" %% "spark-catalyst" % "2.3.3" % Test
+//libraryDependencies += "org.apache.spark" %% "spark-catalyst" % "2.3.3" % Test
 
 
