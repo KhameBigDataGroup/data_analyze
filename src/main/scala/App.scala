@@ -59,7 +59,8 @@ object App extends App {
 //    .start()
 //  query.awaitTermination()
   //
-  df.write.parquet("hdfs://localhost:8020/test/kafka")
+  df.rdd.map(_.toSeq.map(_.toString).mkString(",")).saveAsTextFile("hdfs://localhost:8020/test/kafka")
+//  df.write.parquet("hdfs://localhost:8020/test/kafka")
   //    df.write.save("hdfs://localhost:50070/test")
 
   //  val numbersRdd = sc.parallelize((1 to 10000).toList)
