@@ -1,4 +1,5 @@
 import org.apache.log4j.{Level, Logger}
+import org.apache.spark.streaming.dstream.DStream
 
 import scala.collection.mutable
 
@@ -31,7 +32,7 @@ object App {
     //val stream = ssc.socketTextStream("127.0.0.1", 8008)
 
     //Kafka Stream
-    val stream = KafkaConsumerFactory.createKafkaMessageStream(Array("first_topic"), ssc).map(record => record.value())
+    val stream: DStream[String] = KafkaConsumerFactory.createKafkaMessageStream(Array("first_topic"), ssc).map(record => record.value())
 
     stream.print()
 

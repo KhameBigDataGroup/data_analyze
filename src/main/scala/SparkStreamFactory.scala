@@ -7,7 +7,9 @@ object SparkStreamFactory extends Serializable {
   def createSparkStream(appName: String, duration: Long): (SparkSession, StreamingContext) = {
 
     val sparkConf = new SparkConf()
-//      .set("spark.master",Configs.get("spark.master"))
+      .setMaster("local[*]")
+
+      //      .set("spark.master",Configs.get("spark.master"))
 //      .set("spark.streaming.backpressure.enabled",Configs.get("spark.streaming.backpressure.enabled"))
 //      .set("spark.streaming.backpressure.initialRate",Configs.get("spark.streaming.backpressure.initialRate"))
 //      .set("spark.streaming.kafka.maxRatePerPartition",Configs.get("spark.streaming.kafka.maxRatePerPartition"))
