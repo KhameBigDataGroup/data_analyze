@@ -42,7 +42,7 @@ scalaVersion := "2.11.12"
 
 
 
-libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1"
+//libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.1"
 
 resourceDirectory in (Compile, assembly) := baseDirectory.value / "resources"
 
