@@ -39,4 +39,6 @@ object App extends App {
   //This example checks line for null and prints every existing line consequentally
   readLines.takeWhile(_ != null).foreach(line => println(line))
 
+  sc.stop()
+
 }
