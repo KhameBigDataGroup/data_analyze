@@ -37,6 +37,6 @@ object App extends App {
   def readLines: Seq[String] = Stream.cons(stream.readLine, Stream.continually( stream.readLine))
   print(readLines.length)
   //This example checks line for null and prints every existing line consequentally
-//  readLines.takeWhile(_ != null).foreach(line => println(line))
+  readLines.takeWhile(_ != null).foreach(line => println(line))
 
 }
