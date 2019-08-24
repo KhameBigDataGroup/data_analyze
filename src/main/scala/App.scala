@@ -32,7 +32,7 @@ object App extends App {
 
 
   val hdfs = FileSystem.get(new URI("hdfs://localhost:8020/"), new Configuration())
-  val path = new Path("/txt/numbers-as-text")
+  val path = new Path("/txt/numbers-as-text/part-00000")
   val stream = hdfs.open(path)
   def readLines = Stream.cons(stream.readLine, Stream.continually( stream.readLine))
 
