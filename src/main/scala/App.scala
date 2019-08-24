@@ -40,7 +40,7 @@ object App extends App {
 //  //This example checks line for null and prints every existing line consequentally
 //    readLines.takeWhile(_ != null).foreach(line => println(line))
 
-  val loadRdds = spark.read.text("hdfs:/localhost:8020//tmp/numbers-as-text")
+  val loadRdds = spark.read.text("hdfs://localhost:8020//tmp/numbers-as-text")
   loadRdds.show()
 
 
