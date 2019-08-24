@@ -30,7 +30,7 @@ object App extends App {
     .format("kafka")
     .option("kafka.bootstrap.servers", "172.17.0.1:9092")
     .option("subscribe", "bitcoin")
-    .option("startingOffsets", "earliest")
+    .option("startingOffsets", "latest")
     .load()
   //
   import spark.implicits._
