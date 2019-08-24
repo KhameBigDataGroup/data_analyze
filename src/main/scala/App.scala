@@ -11,7 +11,7 @@ object App extends App {
     //    .setMaster("localhost:7077")
     .setMaster("local[*]")
     .set("spark.driver.allowMultipleContexts", "true")
-    .set("spark.sql.streaming.checkpointLocation", "./checkpoints")
+//    .set("spark.sql.streaming.checkpointLocation", "./checkpoints")
 
   //      .set("spark.driver.memory", "500m")
   //      .set("spark.executor.memory", "500m")
@@ -42,8 +42,5 @@ object App extends App {
 
   val loadRdds = spark.read.text("hdfs://localhost:8020//tmp/numbers-as-text")
   loadRdds.show()
-
-
-  sc.stop()
 
 }
