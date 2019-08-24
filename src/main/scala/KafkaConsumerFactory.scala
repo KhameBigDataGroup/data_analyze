@@ -6,13 +6,13 @@ import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, Loca
 
 object KafkaConsumerFactory extends Serializable {
 
-  val brokers = "172.17.0.1:9092"
+  val brokers = "127.17.0.1:9092"
 
   val kafkaParams: Map[String, Object] = Map[String, Object](
     "bootstrap.servers" -> brokers,
     "key.deserializer" -> classOf[StringDeserializer],
     "value.deserializer" -> classOf[StringDeserializer],
-//    "group.id" -> "group_id",
+    "group.id" -> "group_id",
     "auto.offset.reset" -> "earliest",
     "enable.auto.commit" -> (false: java.lang.Boolean))
 
