@@ -30,7 +30,7 @@ object SparkStreamFactory extends Serializable {
       .builder()
       .master("local")
       .config(sparkConf).appName(appName)
-      .enableHiveSupport()
+//      .enableHiveSupport()
       .getOrCreate()
 
     val sc = spark.sparkContext
