@@ -61,7 +61,7 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.3.3"
 
 libraryDependencies += "org.apache.spark" %% "spark-streaming" % "2.3.3"
 
-libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka" % "1.6.3"
+//libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka" % "1.6.3"
 libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka-0-10" % "2.3.3"
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "0.10.2.2"
 
