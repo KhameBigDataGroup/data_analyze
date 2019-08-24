@@ -17,7 +17,7 @@ object App {
     Logger.getLogger("akka").setLevel(Level.ERROR)
 
 
-    val (spark, ssc) = SparkStreamFactory.createSparkStream("DE_Spark_Streaming", 10)
+    val (spark, ssc) = SparkStreamFactory.createSparkStream("App", 10)
 
 
     ssc.checkpoint("/tmp/")

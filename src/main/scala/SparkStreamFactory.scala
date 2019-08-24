@@ -8,7 +8,6 @@ object SparkStreamFactory extends Serializable {
 
     val sparkConf = new SparkConf()
       .setMaster("local[*]")
-
       //      .set("spark.master",Configs.get("spark.master"))
 //      .set("spark.streaming.backpressure.enabled",Configs.get("spark.streaming.backpressure.enabled"))
 //      .set("spark.streaming.backpressure.initialRate",Configs.get("spark.streaming.backpressure.initialRate"))
@@ -29,6 +28,7 @@ object SparkStreamFactory extends Serializable {
 
     val spark = SparkSession
       .builder()
+      .master("local")
       .config(sparkConf).appName(appName)
       .enableHiveSupport()
       .getOrCreate()
