@@ -1,5 +1,5 @@
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object ReadKafka extends App {
   val sparkConf = new SparkConf()
@@ -25,7 +25,7 @@ object ReadKafka extends App {
 
   val sc = spark.sparkContext
 
-  val df = spark
+  val df: DataFrame = spark
     .readStream
     .format("kafka")
     .option("kafka.bootstrap.servers", "172.17.0.1:9092")
