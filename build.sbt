@@ -19,7 +19,7 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.2"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-8
 //libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka-0-8" % "2.4.3"
-
+//
 // https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10
 //libraryDependencies += "org.apache.spark" %% "spark-streaming-kafka-0-10" % "2.4.3"
 
@@ -34,3 +34,6 @@ assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
+
+//import sbt.Keys._
+//assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
